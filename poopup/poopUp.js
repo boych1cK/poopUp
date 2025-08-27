@@ -22,7 +22,7 @@ class PoopUp {
     showMessage(text, type) {
         if(this.active === false){
             this.active=true;
-            $(this.popUpContainer).removeClass('success error').addClass(type).text(text).fadeIn();
+            $(this.popUpContainer).attr('class', '').addClass(type).text(text).fadeIn();
             setTimeout(() => {
                 $(this.popUpContainer).fadeOut();
                 this.active = false
@@ -34,4 +34,5 @@ class PoopUp {
 
 document.addEventListener('DOMContentLoaded', () => {
     window.poopUp = new PoopUp();
+
 });
