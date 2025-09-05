@@ -20,7 +20,7 @@ class PoopUp {
     }
 
     showMessage(text, type) {
-        if(this.active === false){
+        if(this.active === false || this.popUpContainer.text !== text){
             this.active=true;
             $(this.popUpContainer).attr('class', '').addClass(type).text(text).fadeIn();
             setTimeout(() => {
@@ -36,3 +36,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.poopUp = new PoopUp();
 
 });
+
